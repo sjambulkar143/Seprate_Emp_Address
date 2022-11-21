@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/emp_address/Service Descriptors/emp_address.EmpAddressREST-empaddressrest.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/empaddress"
+}]}

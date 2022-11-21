@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:MainSystem="http://www.EniqueSolutions/EmployeeDetailPOC/MainSystem" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:empaddress="http://www.EniqueSolutions/empaddress/" xmlns:empaddress_1="http://www.example.org/empaddress" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_JoPGAE4lEe2anor-PVsr0w" targetNamespace="http://tns.tibco.com/bw/composite/emp_address" name="emp_address" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_pk2WsmcKEe2iJ9GGEga8bA" name="empaddress1" promote="ComponentEmployeeAddSOAP/empaddress">
+    <sca:interface.wsdl xmi:id="_pk2WtmcKEe2iJ9GGEga8bA" interface="http://www.EniqueSolutions/empaddress/#wsdl.interface(empaddress)" scaext:wsdlLocation="../Service%20Descriptors/empaddress.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_A_4dwGcLEe2iJ9GGEga8bA" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/0c97c2473ba040dca78dfdb2f07e53de/SOAPServiceBinding" portTypeQName="empaddress:empaddress" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/emp_address/Service%20Descriptors/empaddress.wsdl">
+      <bindingType xmi:id="_A_4dwWcLEe2iJ9GGEga8bA"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_FUUucGcLEe2iJ9GGEga8bA" endpointURI="/SOAPServiceBinding/empaddress1/" httpConnector="commonlog.HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_A_4dwmcLEe2iJ9GGEga8bA" operationName="NewOperation" action="NewOperation" actionNeeded="true">
+        <bindingType xmi:id="_A_4dw2cLEe2iJ9GGEga8bA"/>
+        <messageConfiguration xmi:id="_A_4dxGcLEe2iJ9GGEga8bA" messageQName="empaddress:NewOperationRequest" wsdlLocation="platform:/resource/emp_address/Service%20Descriptors/empaddress.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_A_4dxWcLEe2iJ9GGEga8bA" partName="parameters" partElementName="MainSystem:empaddressReq"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_A_4dxmcLEe2iJ9GGEga8bA" messageQName="empaddress:NewOperationResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/emp_address/Service%20Descriptors/empaddress.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_A_4dx2cLEe2iJ9GGEga8bA" partName="parameters" partElementName="MainSystem:RestResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_A_4dyGcLEe2iJ9GGEga8bA">
+          <inputMapping xmi:id="_A_4dyWcLEe2iJ9GGEga8bA"/>
+          <outputMapping xmi:id="_A_4dymcLEe2iJ9GGEga8bA" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_A_4dy2cLEe2iJ9GGEga8bA" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_J2m5ME4lEe2anor-PVsr0w" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_J2rKoE4lEe2anor-PVsr0w" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_J2u1AE4lEe2anor-PVsr0w" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KAsCQE4lEe2anor-PVsr0w" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KDUfgE4lEe2anor-PVsr0w" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KDdCYE4lEe2anor-PVsr0w" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KDk-ME4lEe2anor-PVsr0w" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KDookE4lEe2anor-PVsr0w" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KDsS8E4lEe2anor-PVsr0w" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_XsM6IGcKEe2iJ9GGEga8bA" name="ComponentEmployeeAddSOAP" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_XsM6IWcKEe2iJ9GGEga8bA" processName="emp_address.EmployeeAddSOAP"/>
+    <sca:service xmi:id="_pk2WsGcKEe2iJ9GGEga8bA" name="empaddress">
+      <sca:interface.wsdl xmi:id="_pk2WsWcKEe2iJ9GGEga8bA" interface="http://www.EniqueSolutions/empaddress/#wsdl.interface(empaddress)" scaext:wsdlLocation="../Service%20Descriptors/empaddress.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

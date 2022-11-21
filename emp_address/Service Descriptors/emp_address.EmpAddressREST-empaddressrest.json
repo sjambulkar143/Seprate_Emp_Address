@@ -1,0 +1,101 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "empaddressrest",
+    "description" : "empaddressrest service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/empaddressrest" : {
+      "post" : {
+        "summary" : "postEmpaddressrest",
+        "description" : "postEmpaddressrest",
+        "operationId" : "post-empaddressrest",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/empaddressReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a empaddressRes to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/empaddressRes"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "empaddressReq" : {
+      "type" : "object",
+      "required" : [ "EMPID", "CITY", "ZIPCODE", "STATE", "STREET" ],
+      "properties" : {
+        "EMPID" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "STREET" : {
+          "type" : "string"
+        },
+        "CITY" : {
+          "type" : "string"
+        },
+        "STATE" : {
+          "type" : "string"
+        },
+        "ZIPCODE" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "FileName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "empAddRes" : {
+      "type" : "object",
+      "required" : [ "EMPID", "CITY", "ZIPCODE", "STATE", "STREET" ],
+      "properties" : {
+        "EMPID" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "STREET" : {
+          "type" : "string"
+        },
+        "CITY" : {
+          "type" : "string"
+        },
+        "STATE" : {
+          "type" : "string"
+        },
+        "ZIPCODE" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "empaddressRes" : {
+      "type" : "object",
+      "properties" : {
+        "empAddRes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/empAddRes",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}
